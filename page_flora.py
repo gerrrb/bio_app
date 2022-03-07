@@ -4,10 +4,7 @@ import base64
 import io
 import plotly.express as px
 import numpy as np
-from docx import Document
-from docx.shared import Inches
 from io import BytesIO
-import os
 
 def show_page ():
     st.write("""
