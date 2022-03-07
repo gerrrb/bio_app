@@ -21,7 +21,7 @@ Sebaliknya jika komunitas itu disusun oleh sangat sedikit jenis dan atau jika ha
 
 Kalkulator ini menggunakan formula indeks keragaman Shannon Wiener, dengan formula sebagai berikut:
 
-                # H' = -∑[(ni/N) X ln (ni/N)]
+H' = -∑[(ni/N) X ln (ni/N)]
 
 di mana:
 
