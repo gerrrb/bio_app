@@ -2,11 +2,8 @@ import streamlit as st
 import pandas as pd
 import base64
 import io
-import plotly
-import chart_studio.plotly as py
 import plotly.express as px
 import numpy as np
-import aspose.words as aw
 from docx import Document
 from docx.shared import Inches
 from io import BytesIO
@@ -251,10 +248,7 @@ def show_page ():
         h_bar = px.bar(flora_8_selection, x="Detail Lokasi", y="Nilai H'", barmode="group",
                        color="Kategori H'", facet_col="Tahun Assessment", facet_row="Perusahaan",
                        width=1000, height=500, title='Indeks Keragaman Menurut Lokasi')
-
-    
-        h_bar.write_image("fig1.png")
-            
+           
         h_line = px.line(flora_8_selection, x="Tahun Assessment", y="Nilai H'",
                          color="Detail Lokasi", title='Indeks Keragaman Setiap Tahun')
         
