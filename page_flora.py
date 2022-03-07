@@ -277,7 +277,7 @@ def show_page ():
         bar_inp = px.bar(inp_graph, x="Nama Latin", y="INP", barmode="group", 
                          facet_row="Tahun Assessment", facet_col="Kelas Vegetasi",
                          category_orders={"Kelas Vegetasi": ["Semai", "Pancang", "Tiang", "Pohon"]},
-                         width=1200, height=700,
+                         width=1000, height=500,
                          title='Indeks Nilai Penting Per Kelas Vegetasi')
         
         st.markdown('**3.2. Grafik Indeks Nilai Penting**')
