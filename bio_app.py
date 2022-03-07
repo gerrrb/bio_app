@@ -31,5 +31,5 @@ page = st.sidebar.radio(" ", tuple(pages.keys()))
 pages[page].show_page()
         
 # About
-about = read_markdown("docs/markdown/about.md")
+about = read_markdown("about.md")
 st.sidebar.markdown(about)
