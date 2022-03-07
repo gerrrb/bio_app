@@ -4,6 +4,7 @@ import base64
 import io
 import plotly.express as px
 import numpy as np
+import openpyxl
 from io import BytesIO
 
 st.cache
