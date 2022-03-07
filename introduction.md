@@ -9,7 +9,7 @@ Kalkulator Indeks Keragaman dan Indeks Nilai Penting ini adalah sebuah aplikasi 
 
 Untuk menghitung indeks keragaman fauna, sila pilih opsi **Fauna** pada _sidebar_. Untuk dapat menggunakan kalkulator ini, sila gunakan template dengan format set data yang telah disediakan, yang dapat diunduh di https://github.com/gerrrb/bio_app/blob/main/satwa.xlsx. 
 
-Untuk menghitung indeks keragaman flora, sila pilih opsi **Flora** pada _sidebar_. Untuk dapat menggunakan kalkulator ini, sila gunakan template dengan format yang telah disediakan, yang dapat diunduh di sini. 
+Untuk menghitung indeks keragaman flora, sila pilih opsi **Flora** pada _sidebar_. Untuk dapat menggunakan kalkulator ini, sila gunakan template dengan format yang telah disediakan, yang dapat diunduh di https://github.com/gerrrb/bio_app/raw/main/vegetasi.xlsx. 
 
 
 
