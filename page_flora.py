@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import geopandas as gpd
 import base64
 import io
 import plotly.express as px
@@ -284,6 +285,34 @@ def show_page ():
         with st.expander('Grafik Indeks Nilai Penting',expanded=False):
             st.write(bar_inp)
             
+        #membaca file shp
+        gdf = gpd.read_file(r'C:\Users\01124916\Documents\GitHub\web hcs\Indonesia_Kab_Kota\SHP\Indo_Kab_Kot.shp')
+        gdf.rename(columns = {"PROVINSI": "Provinsi", "KABKOT": "Kabupaten"}, inplace=True)
+        
+        #menggabungkan file shp dengan df nilai karbon
+        
+        df_merged = pd.merge(left=gdf, right=flora_8_selection, how='outer', on=['Provinsi','Kabupaten'])
+
+        df_merged = df_merged.dropna(subset=['Tahun Assessment', 'Perusahaan', 'Klasifikasi HCS', 'Nilai Karbon Total'])
+
+        df_merged = df_merged.drop(columns=["PROVNO", "KABKOTNO"])
+        
+        #convert df to jsonfile
+        
+        df_merged = df_merged.to_crs(epsg=4326)
+        json = df_merged.__geo_interface__
+        
+        #membuat peta
+        
+        fig = px.choropleth_mapbox(df, geojson=json, color="Perusahaan",
+                           locations="Kabupaten", featureidkey="properties.Kabupaten",
+                           center={"lat": 1.068237, "lon": 114.233536}, labels={'Perusahaan':'Perusahaan'},
+                           mapbox_style="carto-positron", zoom=9)
+        fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+        
+        #menampilkan peta
+        with st.expander('Peta',expanded=False):
+            st.write(fig)
 
 
     else:
